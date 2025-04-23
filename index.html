@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="Image/png" sizes="32x32" href="Image/logo.png">
+
+  <title>Hasaan Rao | Professional Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --midnight: #0F172A;
+      --deep-navy: #1E293B;
+      --steel-blue: #475569;
+      --pearl: #F8FAFC;
+      --gold-accent: #F59E0B;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--midnight);
+      color: var(--pearl);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Modern Navigation */
+    header {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--pearl);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--gold-accent);
+    }
+    /* Logo Styles */
+  .logo-img {
+    height: 100px;
+    transition: transform 0.3s ease;
+  }
+
+  .logo-img:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Dark mode logo variant */
+  @media (prefers-color-scheme: dark) {
+    .logo-img {
+      content: url("Image/logo.png");
+    }
+  }
+
+    .nav-links {
+      display: flex;
+      gap: 4rem;
+    }
+
+    .nav-links a {
+      color: var(--pearl);
+      font-weight: 500;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background: var(--gold-accent);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 70%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, rgba(15, 23, 42, 0) 70%);
+      z-index: -1;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text h1 span {
+      color: var(--gold-accent);
+    }
+
+    .hero-text p {
+      font-size: 1.25rem;
+      color: var(--steel-blue);
+      max-width: 80%;
+      margin-bottom: 2rem;
+    }
+
+    .profile-image {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 1rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      border: 3px solid var(--gold-accent);
+      transition: var(--transition);
+    }
+
+    .profile-image:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: var(--gold-accent);
+      color: var(--midnight);
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);
+    }
+
+    /* Sections */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50%;
+      height: 4px;
+      background: var(--gold-accent);
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* Experience Section */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .experience-card {
+      background: var(--deep-navy);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: var(--transition);
+      border-left: 4px solid var(--gold-accent);
+    }
+
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .experience-card h3 {
+      color: var(--gold-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-card .date {
+      color: var(--steel-blue);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-item {
+      background: var(--deep-navy);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .skill-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-item i {
+      font-size: 2.5rem;
+      color: var(--gold-accent);
+      margin-bottom: 1rem;
+    }
+
+ /* Matching Experience Section Style */
+  .reviews-section {
+    background: var(--deep-navy);
+    padding: 4rem 0;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .review-card {
+    background: var(--midnight);
+    border-radius: 0.75rem;
+    border-left: 4px solid var(--gold-accent);
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.1);
+  }
+
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.1);
+  }
+
+  .client-info h3 {
+    color: var(--pearl);
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+  }
+
+  .company {
+    color: var(--steel-blue);
+    font-size: 0.9rem;
+  }
+
+  .rating {
+    color: var(--gold-accent);
+    font-size: 0.9rem;
+  }
+
+  .review-content p {
+    color: var(--pearl);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(245, 158, 11, 0.1);
+    font-size: 0.85rem;
+  }
+
+  .platform {
+    color: var(--gold-accent);
+    font-weight: 500;
+  }
+
+  .date {
+    color: var(--steel-blue);
+  }
+
+  @media (max-width: 768px) {
+    .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+
+ /* Contact Section */
+  .contact-section {
+    background: linear-gradient(135deg, var(--deep-navy) 0%, var(--midnight) 100%);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(245,158,11,0.03) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-subtitle {
+    color: var(--steel-blue);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Left Side Styles */
+  .contact-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .portrait-container {
+    position: relative;
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .profile-portrait {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s ease;
+  }
+
+  .portrait-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--gold-accent);
+    border-radius: 1rem;
+    z-index: 3;
+    pointer-events: none;
+    transform: rotate(1deg);
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+  }
+
+  .contact-method:hover {
+    background: rgba(245, 158, 11, 0.05);
+    transform: translateY(-3px);
+  }
+
+  .method-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-accent);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .method-details h4 {
+    color: var(--pearl);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+  }
+
+  .method-details a, 
+  .method-details p {
+    color: var(--steel-blue);
+    transition: color 0.3s ease;
+  }
+
+  .method-details a:hover {
+    color: var(--gold-accent);
+  }
+
+  /* Right Side - Modern Form */
+  .modern-form {
+    background: var(--deep-navy);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .form-group {
+    margin-bottom: 1.8rem;
+    position: relative;
+  }
+
+  .floating-group {
+    position: relative;
+    padding-top: 1.2rem;
+  }
+
+  .floating-input {
+    width: 100%;
+    padding: 0.8rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--steel-blue);
+    color: var(--pearl);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .floating-input:focus {
+    outline: none;
+    border-bottom-color: var(--gold-accent);
+  }
+
+  .floating-input:focus + label,
+  .floating-input:not(:placeholder-shown) + label {
+    transform: translateY(-1.5rem) scale(0.85);
+    color: var(--gold-accent);
+  }
+
+  .floating-input:focus ~ .underline {
+    transform: scaleX(1);
+  }
+
+  label {
+    position: absolute;
+    top: 1.8rem;
+    left: 0;
+    color: var(--steel-blue);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold-accent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .textarea-label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--steel-blue);
+    transition: all 0.3s ease;
+  }
+
+  .modern-textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--steel-blue);
+    border-radius: 0.5rem;
+    color: var(--pearl);
+    resize: vertical;
+    min-height: 120px;
+    transition: all 0.3s ease;
+  }
+
+  .modern-textarea:focus {
+    outline: none;
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.1);
+  }
+
+  .textarea-underline {
+    height: 2px;
+    background: var(--gold-accent);
+    margin-top: 4px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .modern-textarea:focus ~ .textarea-underline {
+    transform: scaleX(1);
+  }
+
+  /* Submit Button */
+  .submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 1rem;
+    background: var(--gold-accent);
+    color: var(--midnight);
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+  }
+
+  .submit-icon {
+    transition: all 0.3s ease;
+  }
+
+  .submit-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gold-accent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .loader-circle {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(15, 23, 42, 0.2);
+    border-top-color: var(--midnight);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    opacity: 0;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Form States */
+  .form-submitting .submit-btn span,
+  .form-submitting .submit-icon {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  .form-submitting .submit-loader {
+    opacity: 1;
+  }
+
+  .form-submitting .loader-circle {
+    opacity: 1;
+  }
+
+  /* Success Message */
+  .form-success {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(16, 185, 129, 0.9);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateX(150%);
+    transition: transform 0.4s ease;
+    z-index: 1000;
+  }
+
+  .form-success.show {
+    transform: translateX(0);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .contact-visual {
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .portrait-container {
+      width: 200px;
+      flex-shrink: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-visual {
+      flex-direction: column;
+    }
+    
+    .portrait-container {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    
+    .contact-methods {
+      width: 100%;
+    }
+  }
+
+    /* Footer */
+    footer {
+      background: var(--deep-navy);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .social-links a {
+      color: var(--pearl);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--gold-accent);
+      transform: translateY(-3px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .hero-content, .about-content, .contact-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-text p {
+        max-width: 100%;
+      }
+      
+      .profile-image {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .navbar {
+        padding: 1rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar container">
+      <!-- <a href="#" class="logo">Hasaan<span>Rao</span></a> -->
+      <a href="#home" class="logo">
+          <img src="Image/logo.png" alt="Hasaan Rao Logo" class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Hi, I'm <span>Hasaan Rao</span></h1>
+        <p>Software Developer | WordPress Expert | Front-End Specialist</p>
+        <a href="#contact" class="btn">Get In Touch</a>
+      </div>
+      <div class="hero-image">
+        <img src="./Image/hasaan.jpg" alt="Hasaan Rao" class="profile-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>I'm a passionate and detail-oriented Software Developer with expertise in WordPress development, Python programming, and front-end technologies like HTML and CSS.</p>
+          <p>I specialize in building responsive, high-performing web solutions that combine clean code with seamless user experiences.</p>
+          <p>With hands-on experience in both web development and scripting, I bring a unique blend of back-end and front-end knowledge to every project.</p>
+        </div>
+        <div class="about-image">
+          <!-- Optional additional image or graphic -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="experience-grid">
+        <div class="experience-card">
+          <h3>Enterprise Cube</h3>
+          <span class="date">Jan 2025 – Present</span>
+          <p>Python (Programming Language) and Odoo Developer</p>
+        </div>
+        <div class="experience-card">
+          <h3>Digimark</h3>
+          <span class="date">Sep 2023 – Jan 2025</span>
+          <p>WordPress Design and Development (Full-time)</p>
+        </div>
+        <div class="experience-card">
+          <h3>GeneratorReviewsGuide.com</h3>
+          <span class="date">Jan 2023 – Aug 2023</span>
+          <p>Performed keyword research, SWOT analysis, and developed on-page and off-page SEO strategies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <i class="fab fa-wordpress"></i>
+          <h3>WordPress</h3>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-python"></i>
+          <h3>Python</h3>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-html5"></i>
+          <h3>HTML5</h3>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS3</h3>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-search"></i>
+          <h3>SEO</h3>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Odoo</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Reviews Section -->
+<section class="reviews-section">
+  <div class="container">
+    <h2 class="section-title">Client Reviews</h2>
+    
+    <div class="reviews-grid">
+      <!-- Review Card 1 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="client-info">
+            <h3>John D. Anderson</h3>
+            <p class="company">Tech Solutions Inc</p>
+          </div>
+          <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="review-content">
+          <p>"Exceptional WordPress development work. Delivered beyond our expectations with perfect communication throughout the project."</p>
+        </div>
+        <div class="review-footer">
+          <span class="platform">Fiverr</span>
+          <span class="date">March 2024</span>
+        </div>
+      </div>
+
+      <!-- Review Card 2 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="client-info">
+            <h3>Sarah M. Johnson</h3>
+            <p class="company">Digital Innovations</p>
+          </div>
+          <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="review-content">
+          <p>"Outstanding Python development skills. Translated complex requirements into efficient, maintainable code."</p>
+        </div>
+        <div class="review-footer">
+          <span class="platform">Upwork</span>
+          <span class="date">January 2024</span>
+        </div>
+      </div>
+
+      <!-- Review Card 3 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="client-info">
+            <h3>Michael Chen</h3>
+            <p class="company">Ecommerce Masters</p>
+          </div>
+          <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="review-content">
+          <p>"Transformed our SEO strategy completely. Organic traffic tripled in just 3 months. Highly recommended for technical SEO!"</p>
+        </div>
+        <div class="review-footer">
+          <span class="platform">Fiverr</span>
+          <span class="date">February 2024</span>
+        </div>
+      </div>
+
+      <!-- Review Card 4 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="client-info">
+            <h3>Emily Rodriguez</h3>
+            <p class="company">Creative Agency Co</p>
+          </div>
+          <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="review-content">
+          <p>"Pixel-perfect frontend implementation. Exceptional attention to detail and great communication throughout the project."</p>
+        </div>
+        <div class="review-footer">
+          <span class="platform">Upwork</span>
+          <span class="date">December 2023</span>
+        </div>
+      </div>
+
+      <!-- Review Card 5 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="client-info">
+            <h3>James Thompson</h3>
+            <p class="company">Manufacturing Corp</p>
+          </div>
+          <div class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="review-content">
+          <p>"Flawless Odoo implementation. Streamlined our operations significantly. A true expert in enterprise solutions."</p>
+        </div>
+        <div class="review-footer">
+          <span class="platform">Fiverr</span>
+          <span class="date">November 2023</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-header">
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="section-subtitle">Have a project in mind? Send me a message</p>
+    </div>
+
+    <div class="contact-container">
+      <!-- Left Side: Visual Elements -->
+      <div class="contact-visual">
+        <div class="portrait-container">
+          <img src="./Image/hasaan.jpg" alt="Hasaan Rao" class="profile-portrait">
+          <div class="portrait-frame"></div>
+        </div>
+        
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="method-details">
+              <h4>Email Me</h4>
+              <a href="mailto:contact@example.com">contact@example.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div class="method-details">
+              <h4>LinkedIn</h4>
+              <a href="https://linkedin.com/in/hasaan-rao" target="_blank">Connect with me</a>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="method-details">
+              <h4>Location</h4>
+              <p>Khushāb, Punjab, Pakistan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Interactive Form -->
+      <form class="modern-form" id="contactForm">
+        <div class="form-group floating-group">
+          <input type="text" id="name" name="name" class="floating-input" placeholder=" " required>
+          <label for="name">Full Name</label>
+          <div class="underline"></div>
+        </div>
+        
+        <div class="form-group floating-group">
+          <input type="email" id="email" name="email" class="floating-input" placeholder=" " required>
+          <label for="email">Email Address</label>
+          <div class="underline"></div>
+        </div>
+        
+        <div class="form-group floating-group">
+          <input type="text" id="subject" name="subject" class="floating-input" placeholder=" " required>
+          <label for="subject">Subject</label>
+          <div class="underline"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="message" class="textarea-label">Your Message</label>
+          <textarea id="message" name="message" class="modern-textarea" rows="5" required></textarea>
+          <div class="textarea-underline"></div>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <span>Send Message</span>
+          <div class="submit-icon">
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <div class="submit-loader">
+            <div class="loader-circle"></div>
+          </div>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+  
+<script>
+  // Form Handling
+  const contactForm = document.getElementById('contactForm');
+  
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Add submitting class
+    this.classList.add('form-submitting');
+    
+    // Simulate form submission
+    setTimeout(() => {
+      // Remove submitting class
+      this.classList.remove('form-submitting');
+      
+      // Show success message
+      showSuccessMessage();
+      
+      // Reset form
+      this.reset();
+    }, 2000);
+  });
+  
+  function showSuccessMessage() {
+    const successMsg = document.createElement('div');
+    successMsg.className = 'form-success';
+    successMsg.innerHTML = `
+      <i class="fas fa-check-circle"></i>
+      Message sent successfully! I'll be in touch soon.
+    `;
+    
+    document.body.appendChild(successMsg);
+    
+    // Trigger animation
+    setTimeout(() => successMsg.classList.add('show'), 10);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+      successMsg.classList.remove('show');
+      setTimeout(() => successMsg.remove(), 400);
+    }, 5000);
+  }
+</script>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hasaan-rao-787273325/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p>&copy; 2025 Hasaan Rao. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+  // Contact Form Handling
+  const contactForm = document.getElementById('contactForm');
+  
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Create a new FormData object
+    const formData = new FormData(contactForm);
+    
+    // You would typically send this to a server here
+    // For demonstration, we'll just show a success message
+    const formMessage = document.createElement('div');
+    formMessage.className = 'form-message success';
+    formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+    
+    // Insert the message before the submit button
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    contactForm.insertBefore(formMessage, submitButton);
+    
+    // Reset the form
+    contactForm.reset();
+    
+    // Remove the message after 5 seconds
+    setTimeout(() => {
+      formMessage.remove();
+    }, 5000);
+    
+    // In a real implementation, you would use fetch() or AJAX to send the data
+    /*
+    fetch('your-server-endpoint', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Handle success
+    })
+    .catch(error => {
+      // Handle error
+    });
+    */
+  });
+</script>
+</body>
+</html>
